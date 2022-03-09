@@ -1,0 +1,29 @@
+<h2 class="title">Product Detail</h2>
+    <div class="product" *ngIf="product">
+        <h3 class="product__name">
+            {{ product.name }}
+        </h3>
+        <div class="product__img">
+            <a href="{{ product.url }}" target="_blank">
+                <img src="{{ product.img }}" alt="Product Image">
+            </a>
+        </div>
+        <p class="product__description">
+            {{ product.description }}
+        </p>
+        <p class="product__price">
+            {{ product.price }} tg
+        </p>
+        <p class="product__rating">
+            Rating: <span>{{ product.rating }}</span>
+        </p>
+        <div class="product__button">
+            <a class="product__link detail">Detail</a>
+        </div>
+        <div class="product__button">
+            <a href="https://telegram.me/share/url?url={{ product.url }}&text=" class="product__link">Share on Telegram.me</a>
+        </div>
+        <div class="product__button" (click)="goBack()">
+            <a class="product__link go-back">go back</a>
+        </div>
+    </div>
